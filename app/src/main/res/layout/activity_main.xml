@@ -3,51 +3,74 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <!-- Hintergrundbild -->
+    <!-- Hintergrundbild skaliert -->
     <ImageView
         android:id="@+id/backgroundImage"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:scaleType="centerCrop"
         android:src="@drawable/shopping_bg"
-        android:alpha="0.2" /> <!-- Transparenz -->
+        android:scaleType="centerCrop"
+        android:alpha="0.5" />
 
-    <!-- Inhalte darüber -->
-    <LinearLayout
-        android:orientation="vertical"
-        android:padding="16dp"
+    <!-- Scrollbarer Inhalt -->
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <EditText
-            android:id="@+id/editItemName"
+        <LinearLayout
+            android:orientation="vertical"
+            android:padding="16dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Artikelname" />
+            android:layout_height="wrap_content">
 
-        <EditText
-            android:id="@+id/editItemDescription"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Beschreibung" />
+            <!-- Produktname -->
+            <EditText
+                android:id="@+id/editItemName"
+                android:hint="Produktname (z.B. Milch)"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName" />
 
-        <EditText
-            android:id="@+id/editItemNote"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Notiz (optional)" />
+            <!-- Menge -->
+            <EditText
+                android:id="@+id/editItemQuantity"
+                android:hint="Menge (z.B. 500)"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal" />
 
-        <Button
-            android:id="@+id/buttonAdd"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Zur Liste hinzufügen" />
+            <!-- Einheit -->
+            <EditText
+                android:id="@+id/editItemUnit"
+                android:hint="Einheit (z.B. Gramm, Stück)"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text" />
 
-        <ListView
-            android:id="@+id/listView"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1" />
-    </LinearLayout>
+            <!-- Einkaufsort -->
+            <EditText
+                android:id="@+id/editItemPlace"
+                android:hint="Ort (z.B. Landi, Migros)"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text" />
 
+            <!-- Hinzufügen-Button -->
+            <Button
+                android:id="@+id/buttonAdd"
+                android:text="Zur Liste hinzufügen"
+                android:layout_marginTop="12dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <!-- Liste -->
+            <ListView
+                android:id="@+id/listView"
+                android:layout_width="match_parent"
+                android:layout_height="440dp"
+                android:layout_marginTop="16dp"
+                android:divider="@android:color/darker_gray"
+                android:dividerHeight="1dp" />
+        </LinearLayout>
+    </ScrollView>
 </FrameLayout>
