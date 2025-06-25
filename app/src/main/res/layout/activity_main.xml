@@ -31,6 +31,12 @@
             android:layout_height="wrap_content"
             android:hint="Beschreibung" />
 
+        <EditText
+            android:id="@+id/editItemNote"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Notiz (optional)" />
+
         <Button
             android:id="@+id/buttonAdd"
             android:layout_width="wrap_content"
